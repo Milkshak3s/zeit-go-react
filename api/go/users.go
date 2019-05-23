@@ -6,5 +6,5 @@ import (
 )
 
 func Users(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "{\"users\": [\"alice\", \"bob\"]}")
+	fmt.Fprintf(w, "testtesttest")
 }
