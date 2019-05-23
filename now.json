@@ -1,0 +1,21 @@
+{
+    "name": "zeit-go-react",
+    "version": 2,
+    "builds": [
+        { "src": "www/package.json", "use": "@now/next" },
+        { "src": "api/go/*.go", "use": "@now/go" }
+    ],
+    "routes": [
+        {
+          "src": "/api/(.*)",
+          "dest": "/api/$1"
+        },
+        {
+          "src": "/(.*)",
+          "dest": "/www/$1",
+          "headers": {
+            "x-request-path": "$1"
+          }
+        }
+    ]
+}
